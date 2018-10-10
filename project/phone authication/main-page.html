@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="phone.css">
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-auth.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
+    <script>
+    
+        var config = {
+    apiKey: "AIzaSyBabZ39Uj_Xu5OfQkZ4w3aPRvDpKhgnpqI",
+    authDomain: "authen-77140.firebaseapp.com",
+    databaseURL: "https://authen-77140.firebaseio.com",
+    projectId: "authen-77140",
+    storageBucket: "authen-77140.appspot.com",
+    messagingSenderId: "557218775581"
+  };
+  firebase.initializeApp(config);
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Main Page</h1>
+    <input class="input" type="submit" onclick="onSignOut()" value="signOut" />
+    
+    <script>
+        // window.onload = function () {
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         if (user) {
+        //             console.log(user.uid);
+        //             // document.getElementById("auth-div").innerHTML=`<button onclick='onSignOut()'>signout</button>`
+        //             // document.getElementById("recaptcha-container").style.display="none";
+
+        //             // console.log('in user');
+        //         }
+        //         else {
+        //             window.location.replace("./index.html");
+        //         }
+
+        //     })
+
+        // }
+        function onSignOut() {
+            
+            window.location.replace("./index.html");
+
+
+        }
+    </script>
+</body>
+
+</html>

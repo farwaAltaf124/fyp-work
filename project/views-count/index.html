@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body >
+        
+       <!-- <div id="result">
+views:
+       </div> -->
+        <script>
+            
+        var response;
+        var xHttpReq = new XMLHttpRequest();
+        // xHttpReq.setRequestHeader("Content-type", "application/json");
+xHttpReq.onreadystatechange = function () {
+                if (this.readyState ) {
+                    response = JSON.parse(this.responseText);
+                    document.write(response.items[0].statistics.viewCount + "<br />");
+                    console.log(response);            
+ }
+            }
+            xHttpReq.open("GET", "https://www.googleapis.com/youtube/v3/videos?part=statistics&id=fzw3KDQIyo4&key=AIzaSyAKfMw-Op8Fp013Jn3dyJS7747iVpErVPc", true);
+            xHttpReq.send();
+</script>
+      
+</body>
+</html>
