@@ -15,7 +15,7 @@
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
     <script>
-  var config = {
+        var config = {
     apiKey: "AIzaSyBabZ39Uj_Xu5OfQkZ4w3aPRvDpKhgnpqI",
     authDomain: "authen-77140.firebaseapp.com",
     databaseURL: "https://authen-77140.firebaseio.com",
@@ -75,116 +75,125 @@ button:hover{
 </head>
 
 <body>
-    
-        <h2>Add/Update Camera</h2>
-        <hr style="color:#5389c0 ">
-        Please fill in all the required fields and provide as much additional information as possible for your camera. This will allow your camera to be found more easily and more often.
-        <form class="col-container">
-            <div class="col">
-           <h4>Are you:</h4>
-           <input class="checkbx" id="add-cam" type="radio" name="camera" value="addCamera"> Adding a camera
+
+    <h2>Add/Update Camera</h2>
+    <hr style="color:#5389c0 ">
+    Please fill in all the required fields and provide as much additional information as possible for your camera. This
+    will allow your camera to be found more easily and more often.
+    <form class="col-container">
+        <div class="col">
+            <h4>Are you:</h4>
+            <input class="checkbx" id="add-cam" type="radio" name="camera" value="addCamera"> Adding a camera
             <input class="checkbx" id='update-cam' type="radio" name="camera" value="updateCamera"> Updating a camera
-            <br/>
+            <br />
             <h4>Name:</h4><input class=input id="nameInput" type="text" placeholder="Enter Name" required="required" />
             <br />
-            <h4>Email:</h4> <input class=input id="emailInput" type="text" placeholder="Enter Email" required="required" />
+            <h4>Email:</h4> <input class=input id="emailInput" type="email" placeholder="Enter Email" required="required" />
+            <br />
+            <h4>Password:</h4> <input class=input id="passwordInput" type="password" placeholder="Enter password"
+                required="required" />
             <br />
             <h4>Camera Model:</h4><input class=input id="camModel" type="text" placeholder="Camera model" required="required" />
-            <br/>
+            <br />
             <h4>Camera IP:</h4><input class=input id="cam-ip" type="text" placeholder="Camera IP" required="required" />
-            <br/>
+            <br />
             <h4>User IP:</h4><input class=input id="user-ip" type="text" placeholder="User Local IP Address" required="required" />
-<br/>
+            <br />
 
         </div>
         <div class="col">
-           <h4> Where is your camera Located?</h4>
-        <h4>City:</h4><input class=input id="city" type="text" placeholder="Enter City" required="required" />
-        <br />
-        <h4>Country:</h4><input class=input id="country" type="text" placeholder="Enter Country" required="required" />
-        <br />
-        <h4>Category:</h4>
-        <select class="input" name="category" id="places">
-            <option value="select" selected>Where is your camera located?</option>
-            <option value="zoo">Zoos</option>
-            <option value="beaches">beaches</option>
-            <option value="campus">Campus views</option>
-            <option value="school">Schools</option>
-            <option value="uni">University</option>
-            <option value="park">Parks</option>
-            <option value="hospital">Hospitals</option>
-            <option value="road">Roads</option>
-            <option value="mall">Malls</option>
-        </select>
-        <br />
-        <button id="nextBtn" onclick="onNextPressed()"  value="next">Submit</button>
+            <h4> Where is your camera Located?</h4>
+            <h4>City:</h4><input class=input id="city" type="text" placeholder="Enter City" required="required" />
+            <br />
+            <h4>Country:</h4><input class=input id="country" type="text" placeholder="Enter Country" required="required" />
+            <br />
+            <h4>Category:</h4>
+            <select class="input" name="category" id="places">
+                <option value="select" selected>Where is your camera located?</option>
+                <option value="zoo">Zoos</option>
+                <option value="beaches">beaches</option>
+                <option value="campus">Campus views</option>
+                <option value="school">Schools</option>
+                <option value="uni">University</option>
+                <option value="park">Parks</option>
+                <option value="hospital">Hospitals</option>
+                <option value="road">Roads</option>
+                <option value="mall">Malls</option>
+            </select>
+            <br />
+            <button id="nextBtn" onclick="onNextPressed()" value="next">Submit</button>
         </div>
-        </form>
-    
-   
+    </form>
+
+
 </body>
 <script>
-        var database = firebase.database();
-        var userId = localStorage.getItem("userId");
-        if (userId) {
-            database.ref("users/" + userId).on('value', function (snapshot) {
-                var exists = (snapshot.val() !== null);
-                userExistsCallback(userId, exists);
-            })
-        }
-        // window.onload = function () {
-        //     firebase.auth().onAuthStateChanged(user => {
-        //         if (user) {
+    var database = firebase.database();
+    var userId = localStorage.getItem("userId");
+    if (userId) {
+        database.ref("users/" + userId).on('value', function (snapshot) {
+            var exists = (snapshot.val() !== null);
+            userExistsCallback(userId, exists);
+        })
+    }
+    // window.onload = function () {
+    //     firebase.auth().onAuthStateChanged(user => {
+    //         if (user) {
 
-        //             userId = user.uid;
-        //             console.log(userId);
-        //             console.log("in user-form if")
-        //             database.ref("users/" + userId).on('value', function (snapshot) {
-        //                 var exists = (snapshot.val() !== null);
-        //                 userExistsCallback(userId, exists);
-        //             })
-        //         }
-        //         else{
-        //             console.log("in user-form else")
-        //         }
-        //     })
-        // }
-        function userExistsCallback(userId, exists) {
-            if (exists) {
-                window.location.replace("./main-page.html");
-            }
-        }
-        function onNextPressed() {
-            var checkedValue = document.querySelector('.checkbx:checked').value;
-            var op=document.getElementById('places');
-var reason=op.options[op.selectedIndex].text;
-            var name = document.getElementById("nameInput").value;
-            var email = document.getElementById("emailInput").value;
-            var camModel=document.getElementById('camModel').value;
-            var camIp=document.getElementById('cam-ip').value;
-            var userIp=document.getElementById('user-ip').value;
-            var city=document.getElementById('city').value;
-            var country=document.getElementById('country').value;
-
-            writeUserData(checkedValue,userId, name, email,camModel,camIp,userIp,city,country,reason);
+    //             userId = user.uid;
+    //             console.log(userId);
+    //             console.log("in user-form if")
+    //             database.ref("users/" + userId).on('value', function (snapshot) {
+    //                 var exists = (snapshot.val() !== null);
+    //                 userExistsCallback(userId, exists);
+    //             })
+    //         }
+    //         else{
+    //             console.log("in user-form else")
+    //         }
+    //     })
+    // }
+    function userExistsCallback(userId, exists) {
+        if (exists) {
             window.location.replace("./main-page.html");
         }
-        function writeUserData(checkedValue,userId, name, email,camModel,camIp,userIp,city,country,reason) {
-            console.log("write user Data");
-            database.ref('users/' + userId).set({
-                username: name,
-                email: email,
-                cam_model:camModel,
-                cam_ip:camIp,
-                user_ip:userIp,
-                city:city,
-                country:country,
-                place:reason,
-                to:checkedValue,
-                // to:addCamOption,
-                // to:updateCamOption,
+    }
 
-            });
-        }
-    </script>
+    function onNextPressed() {
+        var checkedValue = document.querySelector('.checkbx:checked').value;
+        var op = document.getElementById('places');
+        var reason = op.options[op.selectedIndex].text;
+        var name = document.getElementById("nameInput").value;
+        var email = document.getElementById("emailInput").value;
+        var camModel = document.getElementById('camModel').value;
+        var camIp = document.getElementById('cam-ip').value;
+        var userIp = document.getElementById('user-ip').value;
+        var city = document.getElementById('city').value;
+        var country = document.getElementById('country').value;
+        var password = document.getElementById('passwordInput').value;
+
+        writeUserData(checkedValue, userId, name, email, password, camModel, camIp, userIp, city, country, reason);
+        window.location.replace("./main-page.html");
+    }
+
+    function writeUserData(checkedValue, userId, name, email, password, camModel, camIp, userIp, city, country, reason) {
+        console.log("write user Data");
+        database.ref('users/' + userId).set({
+            username: name,
+            email: email,
+            password,
+            cam_model: camModel,
+            cam_ip: camIp,
+            user_ip: userIp,
+            city: city,
+            country: country,
+            place: reason,
+            to: checkedValue,
+            // to:addCamOption,
+            // to:updateCamOption,
+
+        });
+    }
+</script>
+
 </html>

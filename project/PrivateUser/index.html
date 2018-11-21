@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <h1>Welcom In Private Mode</h1>
+        <div>
+            <div>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <input type="password" id="password">
+            </div>
+            <button id="verify-btn">
+                Verify
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-auth.js"></script> -->
+
+    <script>
+        var config = {
+            apiKey: "AIzaSyBabZ39Uj_Xu5OfQkZ4w3aPRvDpKhgnpqI",
+            authDomain: "authen-77140.firebaseapp.com",
+            databaseURL: "https://authen-77140.firebaseio.com",
+            projectId: "authen-77140",
+            storageBucket: "authen-77140.appspot.com",
+            messagingSenderId: "557218775581"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="index.js"></script>
+</body>
+
+</html>
