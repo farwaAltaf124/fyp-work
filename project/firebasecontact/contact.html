@@ -33,20 +33,34 @@ font-weight: bolder;
 
 }
 .work{
-    margin-top: 50px;
-    padding:10px;
+    margin-top: -43px;
+    /* padding:10px; */
     padding-bottom: 20px
 }
 .foot{
     padding-top:9px; 
 }
+hr{
+    margin-top: 0px;
+    background-color: transparent;
+    border-top:2px solid #a49a9a;
+
+}
+h3{
+    color: #4782ae;
+    font-weight: bold;
+
+}
+
+#wrapper .container {max-width: 1300px; display: block;}</style>
+
  </style>
 </head>
 
 <body>
     <div class="top">
         <nav class="navbar  navbar-fixed-top navbar-custom ">
-            <div class="container-fluid">
+            <div class="container-fluid" >
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
@@ -71,18 +85,16 @@ font-weight: bolder;
                             <!-- <input type="text"><input type="submit"  > <i class="glyphicon glyphicon-search"></i> -->
                         </li>
 
-                        <li><a href="../index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-
-                        <li><a href="./contact.html"><span class="glyphicon glyphicon-user"></span>Contact Us</a></li>
-                        <li><a href="../Map/map.html"><span class=" 	glyphicon glyphicon-map-marker"></span> Map</a></li>
-                        <li>
-                            <div class="vl"></div>
-                        </li>
-
-                        <li>
-                            <div class="login"> <a href="../phone authication/index.html"><span class="glyphicon glyphicon-log-in"></span>
-                                    Login</a></div>
-                        </li>
+                        <li><a href="./contact.html"><span ><img src="../icons/contact-information.png" alt=""></span>Contact
+                            Us</a></li>
+                    <li><a href="../Map/map.html"><span><img src="../icons/placeholder.png" alt=""></span> Map</a></li>
+                    <!-- <li><div class="vl"></div></li>  -->
+                    
+                    <li>
+                         <a href="../phone authication/index.html"><span><img src="../icons/enter.png" alt=""></span>
+                                Login</a>
+                    </li>
+                    <li><a href="../PrivateUser/index.html"><span ><img src="../icons/padlock.png" alt=""></span>Private</a></li>
                     </ul>
                 </div>
             </div>
@@ -91,8 +103,9 @@ font-weight: bolder;
 
 
     <div class="work">
+<div id="wrapper">
         <div class="container">
-
+  <h3>Contact Us</h3> <hr/>
             <div class="alert">Your message has been sent!</div>
             <form class="col-container" id="contactForm" name="Form">
 
@@ -148,6 +161,7 @@ font-weight: bolder;
             </form>
         </div>
     </div>
+</div>
     <!-- footer -->
     <div class="foot">
         <!-- footer -->

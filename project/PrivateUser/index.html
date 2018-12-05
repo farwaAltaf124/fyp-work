@@ -5,32 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../phone authication/phone.css">
     <title>Document</title>
+    <style>
+a{
+    text-decoration: none;
+   
+}
+#back{
+    float: right;
+        margin:-100px;
+        margin-right: 15px;
+}
+.top-image{
+    width: 189px;
+height: 48px;
+margin-top: -28px;
+}
+.one-line{
+        height: 38px;
+        width: auto;
+display: flex;
+background-color: #34788c;    
+padding: 10px 0 21px 10px;
+border-radius: 10px 10px 0 0;
+margin-bottom: 20px;
+}
+h3{
+
+color: white;
+font-weight: bold;
+padding: 0px 0px 11px 12px;
+
+}
+    </style>
 </head>
 
 <body>
-
-    <div>
-        <h1>Welcom In Private Mode</h1>
+        <a id="back" href="../index.html" ><b>&#x2190 Back</b></a>
+    <div class="main" >
+            <div  class="one-line">
+                    <img src="../icons/padlock3.png" alt="">
+                    <h3  >Private User Login</h3>
+                </div>       
         <div>
             <div>
-                <input type="email" id="email">
+                <input class="input" type="email" id="email" placeholder="Email" required>
+                <!-- <img src="../icons/email.png" alt="email"> -->
             </div>
             <div>
-                <input type="password" id="password">
+                <input class="input" type="password" id="password" placeholder="password" required>
             </div>
-            <button id="verify-btn">
-                Verify
-            </button>
+            
+            <button class="input-verify" id="verify-btn">
+               <h2 style="color:beige" >Verify</h2> 
+            </button><br>
+            <span >Not a member? <a  href="../phone authication/user-form.html">Sign up</a> </span>
+       
         </div>
+      
     </div>
-
-
-
-
-
-
-
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase-database.js"></script>

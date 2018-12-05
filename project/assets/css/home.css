@@ -54,17 +54,7 @@ margin-top: -8px;
     min-height: 66px;
 }
 
-.login{
-    width: 80px;
-background-color: black;
-padding: 10px;
-border-radius: 10px;
-margin: 9px 7px 0 7px;
-}
-.login:hover{
-background-color: rgb(114, 55, 55);
 
-}
 
 .navbar-custom {
 color: black;
@@ -265,3 +255,5 @@ background-color: inherit;
   .view{
       background-color: palevioletred;
   }
+
+ 

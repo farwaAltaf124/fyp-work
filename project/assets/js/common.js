@@ -14,8 +14,8 @@ $(document).ready(function(){
 function initMap() {
     var uluru = {lat: 24.9424897, lng: 67.1470131};
     var faizloc={lat: 24.829413, lng: 67.0726507};
-    var string1='<div><h1>Defence Phase7</h1></div>'+"<div><a href='https://youtube.com/embed/vTZUq5YOAHM?rel=0&autoplay=1&modestbranding=1&fs=0'><img src='../Images/defence.png' width='200px' height='200px' /></a><div>"
-    var string2='<div><h1>Haroon</h1></div>'+"<div><a href='https://youtube.com/embed/CL4MErnrTq0?rel=0&autoplay=1&modestbranding=1&fs=0'><img src='../Images/haroon.png' width='200px' height='200px' /></a><div>"
+    var string1="<div><h3 style='color: #4782ae'>Defence Phase7</h3></div>"+"<div><a href='https://youtube.com/embed/vTZUq5YOAHM?rel=0&autoplay=1&modestbranding=1&fs=0'><img src='../Images/defence.png' width='200px' height='100px' /></a><div>"
+    var string2="<div><h3  style='color: #4782ae'>Haroon</h3></div>"+"<div><a href='https://youtube.com/embed/CL4MErnrTq0?rel=0&autoplay=1&modestbranding=1&fs=0'><img src='../Images/haroon.png' width='200px' height='100px' /></a><div>"
   
  
     var infowindow = new google.maps.InfoWindow({
@@ -45,7 +45,7 @@ function initMap() {
     
 
     });
-    marker1.addListener('mouseover', function() {
+    marker1.addListener('click', function() {
       infowindow.open(map, marker1);
       
     });
@@ -53,7 +53,7 @@ function initMap() {
        setTimeout(function(){infowindow.close(map, marker1);},3000) 
         
       });
-    marker.addListener('mouseover', function() {
+    marker.addListener('click', function() {
       infowindow2.open(map, marker);
     });
 

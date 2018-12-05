@@ -13,12 +13,30 @@
         margin:-100px;
         margin-right: 15px;
     }
+    .one-line{
+        height: 50px;
+        width: auto;
+display: flex;
+background-color: #34788c;    
+padding: 10px 0 10px 0;
+border-radius: 10px 10px 0 0;
+margin-bottom: 20px;
+}
+h3{
+
+color: white;
+font-weight: bold;
+
+}
 </style>
 <body >
         <a href="../index.html" ><b>&#x2190 Back</b></a>
   <div class="main">
-        <h1>Phone verification</h1>
-    <div id="auth-div">
+        <div  class="one-line">
+            <img src="../icons/smartphone.png" alt="">
+            <h3 >Phone verification</h3>
+        </div>
+        <div id="auth-div">
       <input class="input" id="phone-number-input" type="text" placeholder="Enter phone number"/><br>
         <button class="input" type="submit" disabled="disabled" id="sign-in-button" onclick="onSignInSubmit()">send code</button>
     </div>

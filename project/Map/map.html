@@ -34,8 +34,8 @@ font-weight: bolder;
  
 }
 .work{
-    margin-top: 100px;
-    padding:10px;
+    margin-top: -57px;
+    padding:16px;
     padding-bottom: 20px
 }
 .foot{
@@ -48,7 +48,16 @@ font-weight: bolder;
      
          * {box-sizing: border-box;}
 
+ hr{
+    margin-top: 0px;
+    background-color: transparent;
+    border-top:2px solid #a49a9a;
+}
+h3{
+    color: #4782ae;
+    font-weight: bold;
 
+}
     </style>
 </head>
 <body>
@@ -79,15 +88,16 @@ font-weight: bolder;
               <!-- <input type="text"><input type="submit"  > <i class="glyphicon glyphicon-search"></i> -->
           </li>
           
-          <li><a href="../index.html"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-          
-          <li><a href="../firebasecontact/contact.html"><span class="glyphicon glyphicon-user"></span>Contact Us</a></li>
-    <li><a href="Map/map.html"><span class=" 	glyphicon glyphicon-map-marker"></span> Map</a></li>
-   <li><div class="vl"></div></li> 
+       <li><a href="../firebasecontact/contact.html"><span ><img src="../icons/contact-information.png" alt=""></span>Contact
+        Us</a></li>
+<li><a href="Map/map.html"><span><img src="../icons/placeholder.png" alt=""></span> Map</a></li>
+<!-- <li><div class="vl"></div></li>  -->
 
-    <li>
-        <div class="login"> <a href="../phone authication/index.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></div>
-       </li>
+<li>
+     <a href="../phone authication/index.html"><span><img src="../icons/enter.png" alt=""></span>
+            Login</a>
+</li>
+<li><a href="../PrivateUser/index.html"><span ><img src="../icons/padlock.png" alt=""></span>Private</a></li>
   </ul>
             </div>
           </div>
@@ -95,6 +105,7 @@ font-weight: bolder;
   </div>
         
                   <div class="work" >
+                      <h3>Map</h3> <hr/>
                       <div id="map">
       
                         </div>
@@ -136,12 +147,12 @@ font-weight: bolder;
             </div>
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_RreT5FylpTzGggoLvZN-2udsjnlPYPk&callback=initMap">
-            $(document).ready(function(){
-            $('#menu-icon').on('click', function(){
-              $('.navbar').toggleClass('expand');
-              return false;
-            });
-          });
+        //     $(document).ready(function(){
+        //     $('#menu-icon').on('click', function(){
+        //       $('.navbar').toggleClass('expand');
+        //       return false;
+        //     });
+        //   });
             </script>    
 </body>
 </html>
